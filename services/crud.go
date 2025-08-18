@@ -31,24 +31,25 @@ func cvcGenerator() int {
 	return r.Intn(max-min+1) + min
 }
 
-func CreateCard(CardholderName string) card.CardData {
-	dateReady := time.Now().Add(time.Hour * 24 * 365 * 10)
-	dateExp := dateReady.Format(MMYYYY)
+func CreateCard(CardholderName string) card.Card {
+	dateInTenYears := time.Now().Add(time.Hour * 24 * 365 * 10)
+	dateExp := dateInTenYears.Format(MMYYYY)
 
-	newCard := card.CardData{
+	newCardData := card.CardData{
 		CardholderName,
 		cardNumGenerator(),
 		dateExp,
 		cvcGenerator(),
 	}
+	newCard := card.Card{Data: newCardData, Balance: 0}
 	database.AddCard(newCard)
 	return newCard
 }
 
 func ReadCard(cardNumber int64) string {
-	data := database.DatabaseMock[cardNumber]
-	result := data.Read()
-	if data.CardNumber == 0 {
+	cardFromDb := database.DatabaseMock[cardNumber]
+	result := cardFromDb.Read()
+	if cardFromDb.Data.CardNumber == 0 {
 		return "card with that number doesnt appear in database"
 	}
 	return result

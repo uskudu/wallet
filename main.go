@@ -6,10 +6,8 @@ import (
 )
 
 func main() {
-	my_card := services.CreateCard("JOHN DOE")
-	fmt.Println(services.ReadCard(my_card.CardNumber))
-	fmt.Println("___")
-	fmt.Println(services.DeleteCard(my_card.CardNumber))
-	fmt.Println("___")
-	fmt.Println(services.ReadCard(my_card.CardNumber))
+	services.CreateCard("JOHN DOE")
+	q := services.CreateCard("IVANOV IVAN")
+	services.CreateCard("MAGOMEDOV MAGOMED")
+	fmt.Println(services.ReadCard(q.Data.CardNumber))
 }

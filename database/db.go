@@ -4,10 +4,10 @@ import (
 	card "wallet/wall"
 )
 
-var DatabaseMock = map[int64]card.CardData{}
+var DatabaseMock = map[int64]card.Card{}
 
-func AddCard(c card.CardData) bool {
-	id := c.CardNumber
+func AddCard(c card.Card) bool {
+	id := c.Data.CardNumber
 	DatabaseMock[id] = c
 	return true
 }

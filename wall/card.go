@@ -1,8 +1,6 @@
 package card
 
-import (
-	"strconv"
-)
+import "strconv"
 
 type CardData struct {
 	CardholderName string
@@ -11,12 +9,12 @@ type CardData struct {
 	CvcCode        int
 }
 
-func (c CardData) Read() string {
-	return "Cardholder: " + c.CardholderName + "\nCardNumber: " + strconv.Itoa(int(c.CardNumber)) + "\nExpirationDate: " + c.ExpirationDate + "\nCvcCode: " + strconv.Itoa(c.CvcCode)
-}
-
 // implement card other data
 type Card struct {
-	data    CardData
-	balance int
+	Data    CardData
+	Balance int
+}
+
+func (c Card) Read() string {
+	return "Cardholder: " + c.Data.CardholderName + "\nCardNumber: " + strconv.Itoa(int(c.Data.CardNumber)) + "\nExpirationDate: " + c.Data.ExpirationDate + "\nCvcCode: " + strconv.Itoa(c.Data.CvcCode) + "\nBalance: " + strconv.Itoa(c.Balance)
 }
