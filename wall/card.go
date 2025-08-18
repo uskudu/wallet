@@ -12,10 +12,20 @@ type CardData struct {
 	CvcCode        string
 }
 
-// implement card other data
 type Card struct {
 	Data    CardData
 	Balance int
+}
+
+func New(CardholderName string) *Card {
+	newCardData := CardData{
+		CardholderName,
+		cardNumGenerator(),
+		expDateGenerator(),
+		cvcGenerator(),
+	}
+	newCard := &Card{Data: newCardData, Balance: 0}
+	return newCard
 }
 
 func (c *Card) Read() string {

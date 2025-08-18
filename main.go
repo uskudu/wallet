@@ -8,7 +8,7 @@ import (
 func main() {
 	i := services.CreateCard("IVANOV IVAN")
 	j := services.CreateCard("JOHN DOE")
-	services.DeleteCard(i)
+	//services.DeleteCard(i)
 	i.Add(10)
 	err := services.Transaction(i, j, 5)
 	if err != nil {
