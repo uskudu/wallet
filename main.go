@@ -15,8 +15,8 @@ func main() {
 		fmt.Println(err)
 	}
 
-	fmt.Println(services.ReadCard(i))
+	fmt.Println(i)
 	fmt.Println("___")
-	fmt.Println(services.ReadCard(j))
+	fmt.Println(j)
 	fmt.Println("___")
 }

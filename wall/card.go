@@ -28,8 +28,12 @@ func New(CardholderName string) *Card {
 	return newCard
 }
 
-func (c *Card) Read() string {
-	return "Cardholder: " + c.Data.CardholderName + "\nCardNumber: " + c.Data.CardNumber + "\nExpirationDate: " + c.Data.ExpirationDate + "\nCvcCode: " + c.Data.CvcCode + "\nBalance: " + strconv.Itoa(c.Balance)
+func (c *Card) String() string {
+	return "Cardholder: " + c.Data.CardholderName +
+		"\nCardNumber: " + c.Data.CardNumber +
+		"\nExpirationDate: " + c.Data.ExpirationDate +
+		"\nCvcCode: " + c.Data.CvcCode +
+		"\nBalance: " + strconv.Itoa(c.Balance)
 }
 
 func (c *Card) Sub(amount int) error {
