@@ -36,14 +36,14 @@ func (c *Card) String() string {
 		"\nBalance: " + strconv.Itoa(c.Balance)
 }
 
+func (c *Card) Add(amount int) {
+	c.Balance += amount
+}
+
 func (c *Card) Sub(amount int) error {
 	if amount > c.Balance {
 		return fmt.Errorf("insufficient funds")
 	}
 	c.Balance -= amount
 	return nil
-}
-
-func (c *Card) Add(amount int) {
-	c.Balance += amount
 }
