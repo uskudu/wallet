@@ -7,33 +7,36 @@ import (
 
 func MakeRace(horses []Horse) []Horse {
 	chances := make([]int, len(horses))
+
 	// collect chances data
 	for i := 0; i < len(horses); i++ {
 		// if no race history change = 1
-		if len(horses[i].RaceHistory) < 1 {
+		if len((horses)[i].RaceHistory) < 1 {
 			chances[i] = 1
 		} else {
 			// each w in race history gives chance + 1
-			ws := 0
-			for _, res := range horses[i].RaceHistory {
+			ws := 1
+			for _, res := range (horses)[i].RaceHistory {
 				if res == "w" {
 					ws++
 				} else {
 					ws--
 				}
 			}
+			if ws < 1 {
+				ws = 1
+			}
 			chances[i] = ws
 		}
 	}
+	// win probability adjustment
 
 	// result
-	resHorses := make([]Horse, len(horses))
-	copy(resHorses, horses)
 
-	sort.Slice(resHorses, func(i, j int) bool {
+	sort.Slice(horses, func(i, j int) bool {
 		return chances[i] > chances[j]
 	})
-	return resHorses
+	return horses
 }
 
 func ReadRace(raceResult []Horse) {
