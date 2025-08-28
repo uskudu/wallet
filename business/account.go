@@ -1,4 +1,4 @@
-package bet
+package business
 
 import (
 	"fmt"
@@ -7,21 +7,19 @@ import (
 )
 
 type Account struct {
-	Name       string
-	Card       card.Card
-	Balance    int
-	BetHistory string
+	Name    string
+	Card    card.Card
+	Balance int
 }
 
 func New(Name string, cardInfo *card.Card) *Account {
-	newAccount := Account{Name, *cardInfo, 0, ""}
+	newAccount := Account{Name, *cardInfo, 0}
 	return &newAccount
 }
 
 func (a *Account) String() string {
 	return "Name: " + a.Name +
-		"\nBalance: " + strconv.Itoa(a.Balance) +
-		"\nBet history: " + a.BetHistory
+		"\nBalance: " + strconv.Itoa(a.Balance)
 }
 
 func (a *Account) add(amount int) {

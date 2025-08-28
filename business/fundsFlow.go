@@ -1,4 +1,4 @@
-package bet
+package business
 
 func (a *Account) AddFunds(amount int) error {
 	err := a.Card.Sub(amount)

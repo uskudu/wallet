@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"wallet/bet"
+	"wallet/business"
 	"wallet/services"
 )
 
@@ -12,7 +12,7 @@ func main() {
 	fmt.Println(i)
 
 	fmt.Println("___")
-	a := bet.New(i.Data.CardholderName, i)
+	a := business.New(i.Data.CardholderName, i)
 	fmt.Println(a)
 	fmt.Println(a.Card)
 
