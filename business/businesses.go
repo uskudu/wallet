@@ -1,7 +1,7 @@
 package business
 
 type Horse struct {
-	Number      int
+	Number      string
 	Name        string
 	OwnerName   string
 	RaceHistory []string
