@@ -15,9 +15,9 @@ func main() {
 	//fmt.Println(a)
 	//fmt.Println(a.Card)
 	var _ = i
-	h1 := business.Horse{Number: "077", Name: "alfa", OwnerName: "IVANOV IVAN", RaceHistory: []int{}}
-	h2 := business.Horse{Number: "023", Name: "beta", OwnerName: "IVANOV IVAN", RaceHistory: []int{}}
-	h3 := business.Horse{Number: "007", Name: "gamma", OwnerName: "IVANOV IVAN", RaceHistory: []int{}}
+	h1 := business.Horse{Number: "077", Name: "alfa", OwnerName: "IVANOV IVAN", RaceHistory: []int{1, 1, 2, 1, 3, 2}}
+	h2 := business.Horse{Number: "023", Name: "beta", OwnerName: "IVANOV IVAN", RaceHistory: []int{2, 3, 1, 2, 1, 4}}
+	h3 := business.Horse{Number: "007", Name: "gamma", OwnerName: "IVANOV IVAN", RaceHistory: []int{2, 3, 3, 1, 4}}
 
 	res := business.MakeRace([]business.Horse{h1, h2, h3})
 	business.ReadRace(res)

@@ -31,7 +31,7 @@ func calcChance(history []int) float64 {
 	alpha := 50.0 // 1 places importance
 	beta := 30.0  // avg place importance
 	gamma := 10.0 // exp importance
-	delta := 10.0 // random importance
+	delta := 20.0 // random importance
 
 	chance := alpha*(float64(P)/float64(N+1)) +
 		beta*(1.0/Pavg) +
