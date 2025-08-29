@@ -5,4 +5,5 @@ type Horse struct {
 	Name        string
 	OwnerName   string
 	RaceHistory []string
+	Chance      float32
 }
